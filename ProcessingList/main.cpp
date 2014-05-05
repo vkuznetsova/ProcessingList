@@ -1,8 +1,11 @@
 #include <QCoreApplication>
 
+#include "TListProcessor.h"
+
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    TListProcessor tListProcessor;
+    QTest::qExec(&tListProcessor);
 
-    return a.exec();
+    return 0;
 }

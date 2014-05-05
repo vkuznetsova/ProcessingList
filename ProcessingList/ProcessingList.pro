@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += core testlib
 
 QT       -= gui
 
@@ -15,4 +15,10 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    ListProcessor.cpp \
+    TListProcessor.cpp
+
+HEADERS += \
+    ListProcessor.h \
+    TListProcessor.h
