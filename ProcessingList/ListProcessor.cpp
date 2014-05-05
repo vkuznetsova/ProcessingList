@@ -21,7 +21,9 @@ QList<int> ListProcessor::sort(QList<int> list)
         for(int j = 0; j < list.size() - i - 1; j++)
         {
             int temp;
-            if(list.at(j) > list.at(j + 1))
+            if(((list.at(j) % 2 < list.at(j + 1) % 2)
+                || (list.at(j) % 2 == list.at(j + 1) % 2
+                    && list.at(j) > list.at(j + 1))))
             {
                 temp = list.at(j);
                 list[j] = list.at(j + 1);
