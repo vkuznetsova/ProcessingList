@@ -10,6 +10,7 @@ public:
     ListProcessor();
 
     static QList<int> reverse(const QList<int> &list);
+    static QList<int> sort(QList<int> list);
 };
 
 #endif // LISTPROCESSOR_H

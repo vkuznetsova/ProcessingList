@@ -15,6 +15,8 @@ public:
 private slots:
     void TestReverse_data();
     void TestReverse();
+    void TestSort_data();
+    void TestSort();
 };
 
 #endif // TLISTPROCESSOR_H
