@@ -21,6 +21,9 @@ private slots:
 
     void TestSortLarge_data();
     void TestSortLarge();
+
+    void TestAdd_data();
+    void TestAdd();
 };
 
 #endif // TLISTPROCESSOR_H

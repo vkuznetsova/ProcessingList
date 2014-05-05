@@ -109,3 +109,33 @@ void TListProcessor::TestSort()
     const List actual = ListProcessor::sort(list);
     QCOMPARE(actual, expected);
 }
+
+void TListProcessor::TestAdd_data()
+{
+    QTest::addColumn<Point>("point1");
+    QTest::addColumn<Point>("point2");
+    QTest::addColumn<Point>("expected");
+
+    QTest::newRow("addition-two-points1") << Point(0, 0) << Point(1, 1)
+                                         << Point(1, 1);
+
+    QTest::newRow("addition-two-points2") << Point(1, 2) << Point(3, 4)
+                                         << Point(4, 6);
+
+    QTest::newRow("addition-two-points3") << Point(0, 0) << Point(-1, -1)
+                                         << Point(-1, -1);
+
+    QTest::newRow("addition-two-points4") << Point(3, 7) << Point(-1, 4)
+                                         << Point(2, 11);
+
+}
+
+void TListProcessor::TestAdd()
+{
+    QFETCH(Point, point1);
+    QFETCH(Point, point2);
+    QFETCH(Point, expected);
+
+    const Point actual = (point1 + point2);
+    QCOMPARE(actual, expected);
+}

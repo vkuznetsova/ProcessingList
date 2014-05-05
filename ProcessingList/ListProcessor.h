@@ -45,6 +45,14 @@ public:
     {
         return (x == point.x && y == point.y);
     }
+
+    friend const Point operator +(const Point &point1, const Point &point2)
+    {
+        Point tmp;
+        tmp.x = point1.x + point2.x;
+        tmp.y = point1.y + point2.y;
+        return tmp;
+    }
     int x;
     int y;
 };
