@@ -7,23 +7,21 @@ ListProcessor::ListProcessor()
 QList<int> ListProcessor::reverse(const QList<int> &list)
 {
     QList<int> reversed;
-    foreach(const int x, list)
+    foreach(const int i, list)
     {
-        reversed.prepend(x);
+        reversed.prepend(i);
     }
     return reversed;
 }
 
-QList<int> ListProcessor::sort(QList<int> list)
+List ListProcessor::sort(List list)
 {
     for(int i = 0; i < list.size() - 1; i++)
     {
         for(int j = 0; j < list.size() - i - 1; j++)
         {
-            int temp;
-            if(((list.at(j) % 2 < list.at(j + 1) % 2)
-                || (list.at(j) % 2 == list.at(j + 1) % 2
-                    && list.at(j) > list.at(j + 1))))
+            Point temp(0, 0);
+            if(list.at(j) > list.at(j + 1))
             {
                 temp = list.at(j);
                 list[j] = list.at(j + 1);
