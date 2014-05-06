@@ -71,6 +71,7 @@ public:
     static QList<int> reverse(const QList<int> &list);
     static List sort(List &list);
     static List movingSum(const List &list);
+    static List movingSumSort(List &list);
 };
 
 #endif // LISTPROCESSOR_H

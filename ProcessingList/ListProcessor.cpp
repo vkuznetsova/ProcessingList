@@ -46,3 +46,8 @@ List ListProcessor::movingSum(const List &list)
     return moved;
 
 }
+
+List ListProcessor::movingSumSort( List &list)
+{
+    return movingSum(sort(list));
+}

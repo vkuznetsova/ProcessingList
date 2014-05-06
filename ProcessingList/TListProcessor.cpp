@@ -172,3 +172,38 @@ void TListProcessor::TestMovingSum()
     const QList<Point> actual = ListProcessor::movingSum(list);
     QCOMPARE(actual, expected);
 }
+
+
+void TListProcessor::TestMovingSumSort_data()
+{
+    QTest::addColumn< List >("list");
+    QTest::addColumn<List >("expected");
+
+    QTest::newRow("empty-list-for-movingSumSort") << List()
+                                                  << List();
+
+    QTest::newRow("one-element-list-for-movingSumSort") << (List() << Point(1, 1))
+                                                        << (List() << Point(1, 1));
+
+    QTest::newRow("two-elements-list-for-movingSumSort") << (List() << Point(2, 2) << Point(1, 1))
+                                                         << (List() << Point(1, 1) << Point(3, 3));
+
+    QTest::newRow("three-elements-list-for-movingSumSort") << (List() << Point(1, 1) << Point(3, 3) << Point(2, 2))
+                                                           << (List() << Point(1, 1) << Point(3, 3) << Point(6, 6));
+
+    QTest::newRow("four-elements-list-for-movingSumSort") << (List() << Point(1, 1) << Point(3, 3) << Point(4, 4) << Point(2, 2))
+                                                          << (List() << Point(1, 1) << Point(3, 3) << Point(6, 6) << Point(10, 10));
+
+    QTest::newRow("ten-elements-list-for-movingSumSort") << (List() << Point(1, 1) << Point(3, 3) << Point(2, 2) << Point(0, 0) << Point(10, 10) << Point(2, 3) << Point(2, 2) << Point(3, 1) << Point(1, 10) << Point(4, 1))
+                                                         << (List() << Point(0, 0) << Point(1, 1) << Point(2, 11) << Point(4, 13) << Point(6, 15) << Point(8, 18) << Point(11, 19) << Point(14, 22) << Point(18, 23) << Point(28, 33));
+
+
+}
+void TListProcessor::TestMovingSumSort()
+{
+    QFETCH(QList<Point>, list);
+    QFETCH(QList<Point>, expected);
+
+    const QList<Point> actual = ListProcessor::movingSumSort(list);
+    QCOMPARE(actual, expected);
+}
