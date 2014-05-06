@@ -145,22 +145,22 @@ void TListProcessor::TestMovingSum_data()
     QTest::addColumn< List >("list");
     QTest::addColumn<List >("expected");
 
-    QTest::newRow("empty-list-movingSum") << List()
+    QTest::newRow("empty-list") << List()
                                           << List();
 
-    QTest::newRow("one-element-list-movingSum") << (List() << Point(1, 1))
+    QTest::newRow("one-element-list") << (List() << Point(1, 1))
                                                 << (List() << Point(1, 1));
 
-    QTest::newRow("two-elements-list-movingSum") << (List() << Point(1, 1) << Point(2, 2))
+    QTest::newRow("two-elements-list") << (List() << Point(1, 1) << Point(2, 2))
                                                  << (List() << Point(1, 1) << Point(3, 3));
 
-    QTest::newRow("three-elements-list-movingSum") << (List() << Point(1, 1) << Point(2, 2) << Point(3, 3))
+    QTest::newRow("three-elements-list") << (List() << Point(1, 1) << Point(2, 2) << Point(3, 3))
                                                    << (List() << Point(1, 1) << Point(3, 3) << Point(6, 6));
 
-    QTest::newRow("four-elements-list-movingSum") << (List() << Point(1, 1) << Point(2, 2) << Point(3, 3) << Point(4, 4))
+    QTest::newRow("four-elements-list") << (List() << Point(1, 1) << Point(2, 2) << Point(3, 3) << Point(4, 4))
                                                   << (List() << Point(1, 1) << Point(3, 3) << Point(6, 6) << Point(10, 10));
 
-    QTest::newRow("ten-elements-list-movingSum") << (List() << Point(1, 1) << Point(2, 2) << Point(3, 3) << Point(4, 4) << Point(5, 5) << Point(2, 0) << Point(0, 2) << Point(0, 0) << Point(10, 10) << Point(7, 7))
+    QTest::newRow("ten-elements-list") << (List() << Point(1, 1) << Point(2, 2) << Point(3, 3) << Point(4, 4) << Point(5, 5) << Point(2, 0) << Point(0, 2) << Point(0, 0) << Point(10, 10) << Point(7, 7))
                                                  << (List() << Point(1, 1) << Point(3, 3) << Point(6, 6) << Point(10, 10) << Point(15, 15) << Point(17, 15) << Point(17, 17) << Point(17, 17) << Point(27, 27) << Point(34, 34));
 
 }
@@ -179,22 +179,22 @@ void TListProcessor::TestMovingSumSort_data()
     QTest::addColumn< List >("list");
     QTest::addColumn<List >("expected");
 
-    QTest::newRow("empty-list-for-movingSumSort") << List()
+    QTest::newRow("empty-list") << List()
                                                   << List();
 
-    QTest::newRow("one-element-list-for-movingSumSort") << (List() << Point(1, 1))
+    QTest::newRow("one-element-list") << (List() << Point(1, 1))
                                                         << (List() << Point(1, 1));
 
-    QTest::newRow("two-elements-list-for-movingSumSort") << (List() << Point(2, 2) << Point(1, 1))
+    QTest::newRow("two-elements-list") << (List() << Point(2, 2) << Point(1, 1))
                                                          << (List() << Point(1, 1) << Point(3, 3));
 
-    QTest::newRow("three-elements-list-for-movingSumSort") << (List() << Point(1, 1) << Point(3, 3) << Point(2, 2))
+    QTest::newRow("three-elements-list") << (List() << Point(1, 1) << Point(3, 3) << Point(2, 2))
                                                            << (List() << Point(1, 1) << Point(3, 3) << Point(6, 6));
 
-    QTest::newRow("four-elements-list-for-movingSumSort") << (List() << Point(1, 1) << Point(3, 3) << Point(4, 4) << Point(2, 2))
+    QTest::newRow("four-elements-list") << (List() << Point(1, 1) << Point(3, 3) << Point(4, 4) << Point(2, 2))
                                                           << (List() << Point(1, 1) << Point(3, 3) << Point(6, 6) << Point(10, 10));
 
-    QTest::newRow("ten-elements-list-for-movingSumSort") << (List() << Point(1, 1) << Point(3, 3) << Point(2, 2) << Point(0, 0) << Point(10, 10) << Point(2, 3) << Point(2, 2) << Point(3, 1) << Point(1, 10) << Point(4, 1))
+    QTest::newRow("ten-elements-list") << (List() << Point(1, 1) << Point(3, 3) << Point(2, 2) << Point(0, 0) << Point(10, 10) << Point(2, 3) << Point(2, 2) << Point(3, 1) << Point(1, 10) << Point(4, 1))
                                                          << (List() << Point(0, 0) << Point(1, 1) << Point(2, 11) << Point(4, 13) << Point(6, 15) << Point(8, 18) << Point(11, 19) << Point(14, 22) << Point(18, 23) << Point(28, 33));
 
 

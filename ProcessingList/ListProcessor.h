@@ -19,9 +19,12 @@ public:
         y(y)
     {
     }
+
+    //todo упростить условия до 1ой строки
     bool operator >(const Point &point) const
     {
-        if(x > point.x)
+        return (x > point.x) || ( x == point.x && y > point.y);
+       /* if(x > point.x)
         {
             return true;
         }
@@ -39,20 +42,17 @@ public:
         else
         {
             return false;
-        }
+        }*/
     }
 
     bool operator ==(const Point &point) const
     {
-        return (x == point.x && y == point.y);
+        return x == point.x && y == point.y;
     }
 
-    friend const Point operator +(const Point &point1, const Point &point2)
+    Point operator +(const Point point) const
     {
-        Point tmp;
-        tmp.x = point1.x + point2.x;
-        tmp.y = point1.y + point2.y;
-        return tmp;
+        return Point(x + point.x, y + point.y);
     }
 
     int x;
@@ -69,9 +69,9 @@ public:
     ListProcessor();
 
     static QList<int> reverse(const QList<int> &list);
-    static List sort(List &list);
+    static List sort(List list);
     static List movingSum(const List &list);
-    static List movingSumSort(List &list);
+    static List movingSumSort(List list);
 };
 
 #endif // LISTPROCESSOR_H

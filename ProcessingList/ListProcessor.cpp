@@ -15,7 +15,7 @@ QList<int> ListProcessor::reverse(const QList<int> &list)
     return reversed;
 }
 
-List ListProcessor::sort(List &list)
+List ListProcessor::sort(List list)
 {
     for(int i = 0; i < list.size() - 1; i++)
     {
@@ -31,7 +31,6 @@ List ListProcessor::sort(List &list)
         }
     }
     return list;
-
 }
 
 List ListProcessor::movingSum(const List &list)
@@ -44,10 +43,9 @@ List ListProcessor::movingSum(const List &list)
         moved.append(point);
     }
     return moved;
-
 }
 
-List ListProcessor::movingSumSort( List &list)
+List ListProcessor::movingSumSort(List list)
 {
     return movingSum(sort(list));
 }
