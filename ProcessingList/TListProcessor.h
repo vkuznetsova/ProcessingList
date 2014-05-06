@@ -24,6 +24,9 @@ private slots:
 
     void TestAdd_data();
     void TestAdd();
+
+    void TestMovingSum_data();
+    void TestMovingSum();
 };
 
 #endif // TLISTPROCESSOR_H

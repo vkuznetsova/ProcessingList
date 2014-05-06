@@ -1,4 +1,5 @@
 #include "ListProcessor.h"
+#include <QDebug>
 
 ListProcessor::ListProcessor()
 {
@@ -14,7 +15,7 @@ QList<int> ListProcessor::reverse(const QList<int> &list)
     return reversed;
 }
 
-List ListProcessor::sort(List list)
+List ListProcessor::sort(List &list)
 {
     for(int i = 0; i < list.size() - 1; i++)
     {
@@ -30,5 +31,18 @@ List ListProcessor::sort(List list)
         }
     }
     return list;
+
+}
+
+List ListProcessor::movingSum(const List &list)
+{
+    List moved;
+    Point point(0, 0);
+    for(int i = 0; i < list.size(); i++)
+    {
+        point = point + list.at(i);
+        moved.append(point);
+    }
+    return moved;
 
 }
