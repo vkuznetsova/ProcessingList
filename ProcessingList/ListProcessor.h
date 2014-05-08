@@ -3,6 +3,7 @@
 #define LISTPROCESSOR_H
 
 #include <QtCore>
+#include <QString>
 
 
 class Point
@@ -24,7 +25,7 @@ public:
     bool operator >(const Point &point) const
     {
         return (x > point.x) || ( x == point.x && y > point.y);
-       /* if(x > point.x)
+        /* if(x > point.x)
         {
             return true;
         }
@@ -53,6 +54,13 @@ public:
     Point operator +(const Point point) const
     {
         return Point(x + point.x, y + point.y);
+    }
+    \
+    QString toString() const
+    {
+        return "Point{"
+                + QString::number(x) + ", "
+                + QString::number(y) + "}";
     }
 
     int x;
